@@ -1,0 +1,45 @@
+$width: 250px;
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  width: $width;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    .image {
+      opacity: 0.7;
+    }
+    .textContainer {
+      transform: translateY(-30px);
+    }
+  }
+}
+
+.imageContainer {
+  position: relative;
+  height: 150px;
+  width: $width;
+  object-fit: cover;
+  z-index: 1;
+
+  .image {
+  }
+}
+
+.textContainer {
+  transition: transform 0.2s;
+  background-color: white;
+  z-index:2;
+  padding: 10px;
+  position: relative;
+
+  .title {
+    margin-bottom: 5px;
+  }
+
+  .subheading {
+    margin-bottom: 10px;
+  }
+}

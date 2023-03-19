@@ -1,0 +1,21 @@
+@use "../../../styles/settings";
+
+.workItem {
+}
+
+.workItemHeader {
+  font-size: 20px;
+  text-align: center;
+
+
+}
+
+.text {
+  padding: 0 50px;
+  max-width: settings.$maxTextWidth;
+  margin: 0 auto;
+  line-height: 1.6;
+  p {
+    margin: 0;
+  }
+}

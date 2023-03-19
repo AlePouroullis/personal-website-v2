@@ -1,0 +1,147 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.top {
+  h1 {
+    margin: 0;
+
+    font-size: 50px;
+
+    //  background-image: linear-gradient(to right, #990d35, #d52941);
+    -webkit-background-clip: text;
+    //  -webkit-text-fill-color: transparent;
+  }
+}
+
+.bottom {
+  .navLinksList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+  }
+}
+
+.linkWrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background-color: orange;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .link {
+    user-select: none;
+    cursor: pointer;
+    color: inherit;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+
+  &:hover {
+    .link {
+      color: orange;
+      // add underline that originates from center and spreads outward to edges of container
+    }
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.navLinksListMobile {
+  display: none;
+  position: relative;
+}
+
+.burger {
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  right: 0;
+
+  $dimensions: 30px;
+  height: 20px;
+  width: $dimensions;
+  cursor: pointer;
+  margin: 25px;
+
+  &.open {
+    .bar {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  }
+  .bar {
+    transition: 0.3s;
+    background-color: black;
+
+    height: 3px;
+    border-radius: 2px;
+  }
+}
+
+.mobileMenu {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  position: fixed;
+  background-image: linear-gradient(to bottom, white, lightgrey);
+  // move off screen
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  &.open {
+    // move on screen
+    transform: translateX(0);
+  }
+
+  .navList {
+    list-style: none;
+    margin: 0;
+    padding: 30px;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+// media query for mobile using pointer type
+// @media (pointer: coarse) {
+@media (max-width: 900px) {
+  .navLinksList {
+    display: none;
+  }
+  .navLinksListMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}

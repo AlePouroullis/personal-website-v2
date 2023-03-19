@@ -1,9 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import About from "@components/homePage/About/About";
+import Layout from "@components/Layout/Layout";
+import Projects from "@components/homePage/Projects/Projects";
+import Work from "@components/homePage/Work/Work";
+import styles from "@styles/Home.module.scss";
+import { useEffect } from "react";
 
 export default function Home() {
   return (
@@ -19,14 +20,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
-      <div>Hello world</div>
-      <Image
-        src="https://i.ibb.co/3Csst9c/close-up-smile-no-teeth.jpg"
-        width="500"
-        height="500"
-        style={{ objectFit: "contain" }}
-        alt="me"
-      />
+      <Layout>
+        <main>
+          <section id="about">
+            <About />
+          </section>
+          <section id="work">
+            <div className={styles.sectionHeader}>
+              <h2>work</h2>
+            </div>
+            <Work />
+          </section>
+          <section id="projects">
+            <div className={styles.sectionHeader}>
+              <h2>projects</h2>
+            </div>
+            <Projects />
+          </section>
+        </main>
+      </Layout>
     </>
   );
 }

@@ -1,0 +1,53 @@
+@use "../../../styles/settings";
+
+.bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  max-width: 850px;
+  margin: 0 auto;
+  .left {
+    .image {
+      object-fit: contain;
+      border-radius: 50%;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .name {
+      font-size: 30px;
+      text-align: center;
+    }
+    .bioText {
+      line-height: 1.5;
+      font-size: 20px;
+      max-width: settings.$maxTextWidth;
+      text-align: center;
+    }
+  }
+}
+
+.longBio {
+  padding: 0 50px;
+  max-width: settings.$maxTextWidth;
+  line-height: 1.6;
+  margin: 0 auto;
+  margin-top: 25px;
+
+  em {
+    font-style: normal;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 900px) {
+  .bio {
+    margin-top: 25px;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

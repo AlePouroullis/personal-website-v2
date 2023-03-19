@@ -1,0 +1,41 @@
+@use "../../../styles/settings";
+
+.wrapper {
+  max-width: settings.$maxTextWidth;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.introduction {
+   margin-bottom: 15px;
+}
+
+.projectCardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dialogContent {
+  padding: 20px;
+
+  .dialogHeader {
+   margin-bottom: 15px;
+  }
+
+  .dialogText {
+   line-height: 1.6;
+   margin-bottom: 15px;
+  }
+
+  .dialogLinksWrapper {
+   display: flex;
+   flex-direction: column;gap: 5px;
+      .link {
+
+         color: inherit;
+      }
+
+  }
+}
