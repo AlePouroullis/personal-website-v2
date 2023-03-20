@@ -1,6 +1,8 @@
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 const links = [
   {
@@ -22,6 +24,7 @@ const commonProps = {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
   return (
     <div className={styles.header}>
       <div className={styles.top}>
@@ -32,9 +35,15 @@ export default function Header() {
           {links.map((link) => {
             return (
               <li className={styles.linkWrapper} key={link.name}>
-                <Link {...commonProps} to={link.href}>
-                  {link.name}
-                </Link>
+                {router.pathname === "/" ? (
+                  <Link {...commonProps} to={link.href}>
+                    {link.name}
+                  </Link>
+                ) : (
+                  <NextLink href={"/#" + link.href} className={styles.link}>
+                    {link.href}
+                  </NextLink>
+                )}
               </li>
             );
           })}
@@ -53,17 +62,30 @@ export default function Header() {
               mobileMenuOpen ? styles.open : ""
             }`}
           >
+            <div className={styles.headingWrapper}>
+              <h1 className={styles.heading}>alé pouroullis</h1>
+            </div>
             <ul className={styles.navList}>
               {links.map((link) => {
                 return (
                   <li key={link.name}>
-                    <Link
-                      onClick={() => setMobileMenuOpen(false)}
-                      {...commonProps}
-                      to={link.href}
-                    >
-                      {link.name}
-                    </Link>
+                    {router.pathname === "/" ? (
+                      <Link
+                        onClick={() => setMobileMenuOpen(false)}
+                        {...commonProps}
+                        to={link.href}
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <NextLink
+                        href={"/#" + link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={styles.link}
+                      >
+                        {link.href}
+                      </NextLink>
+                    )}
                   </li>
                 );
               })}

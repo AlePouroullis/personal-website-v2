@@ -7,7 +7,7 @@
 }
 
 .introduction {
-   margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .projectCardsWrapper {
@@ -21,21 +21,21 @@
   padding: 20px;
 
   .dialogHeader {
-   margin-bottom: 15px;
+    margin-bottom: 15px;
   }
 
   .dialogText {
-   line-height: 1.6;
-   margin-bottom: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
   }
 
   .dialogLinksWrapper {
-   display: flex;
-   flex-direction: column;gap: 5px;
-      .link {
-
-         color: inherit;
-      }
-
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .link {
+      color: inherit;
+    }
   }
 }
+

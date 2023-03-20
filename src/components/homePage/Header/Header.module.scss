@@ -5,16 +5,14 @@
   gap: 10px;
 }
 
-.top {
-  h1 {
-    margin: 0;
+.heading {
+  margin: 0;
 
-    font-size: 50px;
+  font-size: 50px;
 
-    //  background-image: linear-gradient(to right, #990d35, #d52941);
-    -webkit-background-clip: text;
-    //  -webkit-text-fill-color: transparent;
-  }
+  //  background-image: linear-gradient(to right, #990d35, #d52941);
+  -webkit-background-clip: text;
+  //  -webkit-text-fill-color: transparent;
 }
 
 .bottom {
@@ -45,6 +43,7 @@
   .link {
     user-select: none;
     cursor: pointer;
+
     color: inherit;
     transition: 0.3s;
     text-decoration: none;
@@ -62,8 +61,13 @@
 }
 
 .navLinksListMobile {
+  .headingWrapper {
+    display: flex;
+    justify-content: center;
+  }
   display: none;
   position: relative;
+  user-select: none;
 }
 
 .burger {
@@ -135,8 +139,10 @@
 // media query for mobile using pointer type
 // @media (pointer: coarse) {
 @media (max-width: 900px) {
-  .navLinksList {
-    display: none;
+  .bottom {
+    .navLinksList {
+      display: none;
+    }
   }
   .navLinksListMobile {
     display: flex;
