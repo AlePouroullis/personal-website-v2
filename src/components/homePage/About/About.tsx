@@ -59,7 +59,7 @@ export default function About() {
             mines that analyzes their blasting operations.
             <br />
             <br />
-            These two projects required shouldering lots of resoponsibility
+            These two projects required shouldering lots of responsibility
             which has accelerated my growth and understanding of the software
             development process. Beyond upskilling myself technically, I&apos;ve
             had to make plenty use of soft skills, like speaking with various
