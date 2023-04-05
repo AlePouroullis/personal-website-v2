@@ -1,30 +1,30 @@
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faFile } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import styles from "./SocialLinksList.module.scss";
-import Link from "next/link";
 
 const links = [
   {
     name: "linkedin",
     href: "https://www.linkedin.com/in/alexandros-pouroullis-a105051b6/",
-    icon: faLinkedin,
+    icon: LinkedInIcon,
   },
   {
     name: "github",
     href: "https://github.com/AlePouroullis",
-    icon: faGithub,
+    icon: GitHubIcon,
   },
   {
     name: "email",
     href: "mailto:alexpouroullis123@gmail.com",
-    icon: faEnvelope,
+    icon: AlternateEmailIcon,
   },
 
   {
     name: "resume",
     href: "/resume.pdf",
-    icon: faFile,
+    icon: AttachFileIcon,
   },
 ];
 
@@ -32,6 +32,7 @@ export default function SocialLinksList() {
   return (
     <ul className={styles.socialLinksList}>
       {links.map((link) => {
+        const Icon = link.icon;
         return (
           <li key={link.name}>
             <a
@@ -40,7 +41,7 @@ export default function SocialLinksList() {
               target="_blank"
               href={link.href}
             >
-              <FontAwesomeIcon icon={link.icon} className={styles.icon} />
+              <Icon className={styles.icon}/>
             </a>
           </li>
         );
